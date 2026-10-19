@@ -18,7 +18,7 @@ Claude Code plugins for DevDigest engineering teams. This marketplace is release
 | `architecture-review` | Architecture review checklists and ADR helpers |
 | `sdd-engineering` | Spec-driven development workflow |
 
-A browsable catalog is published from `site/` to GitHub Pages.
+A browsable catalog (React + Vite, see [site/README.md](site/README.md)) is built from `site/` and published to GitHub Pages.
 
 ## Repository layout
 
@@ -26,8 +26,8 @@ A browsable catalog is published from `site/` to GitHub Pages.
 .claude-plugin/marketplace.json   catalog
 plugins/<name>/                   one directory per plugin, versioned independently
 docs/                             guidelines, security, releases, cost baseline, site spec
-scripts/                          validate, release, rollback, build-index
-site/                             static catalog site (data generated at build time)
+scripts/                          validate, release, rollback
+site/                             catalog site; data is generated at build time by site/scripts/build-index.mjs
 CODEOWNERS                        one owner per plugin (enforced by the rulesets)
 .github/rulesets/                 importable branch and tag protection rules
 ```
@@ -41,7 +41,7 @@ CODEOWNERS                        one owner per plugin (enforced by the rulesets
 | `scripts/release.sh <plugin> <patch\|minor\|major\|X.Y.Z> [--push]` | Prepare a release commit on a branch (PR follows; CI tags after merge) |
 | `scripts/rollback.sh <plugin> <X.Y.Z\|tag> [--push]` | Prepare a rollback as a new patch version |
 | `scripts/tag-release.sh [--push] [--dry-run]` | Create missing `<plugin>--v<version>` tags (run by CI on `main`) |
-| `node scripts/build-index.mjs [--check] [--out file]` | Generate the catalog index and cost baseline for the site |
+| `node site/scripts/build-index.mjs [--check] [--out dir]` | Generate the catalog data and cost baseline (needs `npm ci --prefix site`) |
 
 ## Documentation
 

@@ -2,7 +2,7 @@
 
 This guide is enough to prepare a pull request without asking anyone where files go or what to run.
 
-Requirements: `git`, `jq`, Node 18+, and optionally the `claude` CLI (`scripts/validate.sh` runs `claude plugin validate` when it is installed).
+Requirements: `git`, `jq`, Node 22 with `npm` (the first `scripts/validate.sh` run installs the site's dependencies with `npm ci`), and optionally the `claude` CLI (`scripts/validate.sh` runs `claude plugin validate` when it is installed).
 
 ## Quick start
 
@@ -46,7 +46,7 @@ git push -u origin HEAD
 | Catalog entry (name, source, description, category, tags) | `.claude-plugin/marketplace.json` |
 | Plugin owner | `CODEOWNERS`, line `/plugins/<name>/ @org/team` |
 | Rules, process, security, cost | `docs/` |
-| Catalog website | `site/` (the data file is generated, do not commit it) |
+| Catalog website | `site/` (the data in `site/public/` is generated, do not commit it) |
 | Automation | `scripts/`, `.github/workflows/` (marketplace admins own these) |
 
 ## Plugin structure
@@ -122,7 +122,7 @@ It runs the same checks as CI (`.github/workflows/validate.yml`):
 | Dependencies resolve (see above) | Fix the name or ask an admin about cross-marketplace |
 | No absolute paths (`/Users/...`, `/home/...`, `C:\...`, JSON values starting with `/`) | Use relative paths or `${CLAUDE_PLUGIN_ROOT}` |
 | No secrets (patterns in `scripts/secret-patterns.txt`) | Remove it, **rotate the credential**, use `userConfig` with `sensitive: true` |
-| Catalog index builds (`node scripts/build-index.mjs --check`) | Fix the SKILL.md frontmatter it names |
+| Catalog index builds (`node site/scripts/build-index.mjs --check`) | Fix the SKILL.md frontmatter it names |
 | `claude plugin validate .` (if the CLI is installed) | Read its message; it names the field |
 
 Also test the plugin for real:

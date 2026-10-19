@@ -1,4 +1,6 @@
 .DS_Store
 node_modules/
 *.local.json
-site/data/
+site/dist/
+site/public/index.json
+site/public/bodies/
