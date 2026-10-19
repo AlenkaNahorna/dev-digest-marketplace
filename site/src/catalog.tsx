@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import type { Entry, Index, Release } from './types';
+import { compareReleases } from './releases';
 
 // Loads public/index.json once and shares it; long texts are fetched per page from bodies/.
 
@@ -68,11 +69,11 @@ export interface ReleaseItem extends Release {
   plugin: string;
 }
 
-/** Every release of every plugin, newest first (undated last). */
+/** Every release of every plugin, newest first: by date, then version (undated last). */
 export function allReleases(entries: Entry[]): ReleaseItem[] {
   return entries
     .flatMap((e) => (e.releases ?? []).map((r) => ({ ...r, plugin: e.name })))
-    .sort((a, b) => (b.date ?? '').localeCompare(a.date ?? '') || a.plugin.localeCompare(b.plugin));
+    .sort(compareReleases);
 }
 
 export const findEntry = (entries: Entry[], id: string): Entry | undefined => entries.find((e) => e.id === id);
