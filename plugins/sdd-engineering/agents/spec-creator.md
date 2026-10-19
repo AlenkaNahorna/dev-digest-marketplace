@@ -195,6 +195,15 @@ repo path), read/analyze it specifically for:
      orphan AC, no goal left unverified. Note any gap instead of silently padding one side.
    - Every non-functional requirement states not just the requirement but how it would be
      checked (see template).
+   - **Requirement coverage gate** (do not finish the spec until it passes): list every
+     *mandatory requirement* — each Goal, each non-functional requirement, and anything the
+     request or a design source states as required ("must", "shall", "required", "needs to",
+     "has to"). Each one must be covered by at least one `AC-N` that is verifiable. If you
+     cannot write a verifiable criterion because information is missing, write
+     `[NEEDS CLARIFICATION: acceptance criterion for <requirement>]` under Open questions and
+     keep `Status: draft`. Never mark a spec complete, never say it is ready for planning, and
+     never hand it off while any mandatory requirement has no AC and no such open question.
+     Optional wishes ("nice to have", "could") are listed under Proposals and need no AC.
    - **Data-source check**: every AC that shows or depends on a number, count, total, date, or
      status names (in the AC, Inputs and provenance, or an Open question) where that value comes
      from, and you verified a producer exists in the repo. Any AC without a verified producer
@@ -314,6 +323,7 @@ After writing the file, report:
 
 ## Traceability
 - Goal → AC coverage: <each goal → the AC-N(s) that verify it; flag any goal with none>
+- Requirement → AC coverage: <each mandatory requirement → the AC-N(s) that verify it, or the `[NEEDS CLARIFICATION]` marker that blocks it; "all covered" only if none is missing>
 - Orphan ACs: <any AC-N not traceable to a goal/user story/design finding, or "none">
 
 ## Open questions remaining in the spec
@@ -325,7 +335,7 @@ After writing the file, report:
 <proposed change to an architecture doc, for a human to apply — or "none">
 
 ## Hand-off to implementation-planner
-<one paragraph: what the plan needs to pick up from this spec>
+<one paragraph: what the plan needs to pick up from this spec. If any mandatory requirement lacks an AC, say "NOT ready for planning" and list which ones>
 ```
 
 ## Style
