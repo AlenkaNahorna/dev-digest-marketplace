@@ -138,9 +138,17 @@ if [ -f .gitattributes ] && grep -q 'filter=lfs' .gitattributes; then
   fail "Git LFS is enabled in .gitattributes; plugin files must not use LFS"
 fi
 
-# Catalog index (also checks SKILL.md descriptions) when Node is available
+# Catalog index (also checks SKILL.md and agent frontmatter) when Node is available.
+# The builder needs the site dependencies; install them once if they are missing.
 if command -v node >/dev/null 2>&1; then
-  node scripts/build-index.mjs --check >/dev/null || fail "scripts/build-index.mjs --check failed"
+  if [ ! -d site/node_modules/yaml ] && command -v npm >/dev/null 2>&1; then
+    npm ci --prefix site --ignore-scripts --silent >/dev/null 2>&1 || true
+  fi
+  if [ -d site/node_modules/yaml ]; then
+    node site/scripts/build-index.mjs --check >/dev/null || fail "site/scripts/build-index.mjs --check failed (run it to see the problems)"
+  else
+    warn "site dependencies are not installed (run: npm ci --prefix site); skipped the catalog index check"
+  fi
 else
   warn "node not found; skipped the catalog index check"
 fi

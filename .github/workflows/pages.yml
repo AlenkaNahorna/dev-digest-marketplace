@@ -6,7 +6,6 @@ on:
       - site/**
       - plugins/**
       - .claude-plugin/**
-      - scripts/build-index.mjs
       - .github/workflows/pages.yml
   workflow_dispatch:
 permissions:
@@ -24,13 +23,18 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the index reads each plugin's last commit date
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - run: node scripts/build-index.mjs
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci --prefix site --ignore-scripts
+      - run: npm run build --prefix site # catalog data, type check, production build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: site/dist
       - id: deployment
         uses: actions/deploy-pages@v4

@@ -11,7 +11,7 @@ Plugins cost context tokens in two ways:
 
 ## How it is measured
 
-`node scripts/build-index.mjs` estimates tokens as `ceil(characters / 4)` and stores them in `site/data/index.json` (`cost.alwaysLoadedTokens`, `cost.onInvokeTokens`, and per skill `metadataTokens`, `bodyTokens`). The site shows both numbers per plugin. The estimate is deliberately simple and consistent; it is for tracking change, not billing.
+`node site/scripts/build-index.mjs` estimates tokens as `ceil(characters / 4)` and stores the per-plugin totals in `site/public/index.json` (`cost.alwaysLoadedTokens`, `cost.onInvokeTokens`). The site shows both numbers per plugin. The estimate is deliberately simple and consistent; it is for tracking change, not billing.
 
 ## Baseline
 
