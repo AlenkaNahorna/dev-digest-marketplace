@@ -32,7 +32,7 @@ jobs:
           cache-dependency-path: site/package-lock.json
       - run: npm ci --prefix site --ignore-scripts
       - run: npm run build --prefix site # catalog data, type check, production build
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
