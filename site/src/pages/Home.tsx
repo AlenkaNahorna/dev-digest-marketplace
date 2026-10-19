@@ -38,7 +38,7 @@ export function Home() {
       ) : (
         <>
           <section className="tiles" aria-label="Catalog size">
-            {KINDS.map((kind) => (
+            {KINDS.filter((kind) => kind !== 'command').map((kind) => (
               <a key={kind} className="tile" href={`#/search?kind=${kind}`}>
                 <strong className="mono">{entries.filter((e) => e.kind === kind).length}</strong>
                 <span>{KIND_LABEL[kind]}</span>
