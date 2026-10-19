@@ -1,0 +1,37 @@
+{
+  "name": "dev-digest-marketplace",
+  "description": "Claude Code plugins for DevDigest engineering teams, released independently of the DevDigest product",
+  "owner": {
+    "name": "DevDigest AI Team"
+  },
+  "plugins": [
+    {
+      "name": "engineering-paved-path",
+      "source": "./plugins/engineering-paved-path",
+      "description": "Paved-path engineering conventions and workflows for DevDigest teams",
+      "category": "engineering",
+      "tags": ["engineering", "conventions"]
+    },
+    {
+      "name": "research-tools",
+      "source": "./plugins/research-tools",
+      "description": "Research helpers: structured briefs, source gathering and synthesis",
+      "category": "research",
+      "tags": ["research", "analysis"]
+    },
+    {
+      "name": "architecture-review",
+      "source": "./plugins/architecture-review",
+      "description": "Architecture review checklists and decision-record helpers",
+      "category": "architecture",
+      "tags": ["architecture", "review", "adr"]
+    },
+    {
+      "name": "sdd-engineering",
+      "source": "./plugins/sdd-engineering",
+      "description": "Spec-driven development workflow: spec, plan, tasks, implementation",
+      "category": "engineering",
+      "tags": ["sdd", "specs", "workflow"]
+    }
+  ]
+}

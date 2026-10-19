@@ -1,0 +1,10 @@
+{
+  "name": "research-tools",
+  "description": "Research helpers: structured briefs, source gathering and synthesis",
+  "version": "0.1.0",
+  "author": {
+    "name": "DevDigest AI Team"
+  },
+  "license": "MIT",
+  "keywords": ["research", "analysis"]
+}

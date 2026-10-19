@@ -1,0 +1,10 @@
+{
+  "name": "architecture-review",
+  "description": "Architecture review checklists and decision-record helpers",
+  "version": "0.1.0",
+  "author": {
+    "name": "DevDigest AI Team"
+  },
+  "license": "MIT",
+  "keywords": ["architecture", "review", "adr"]
+}

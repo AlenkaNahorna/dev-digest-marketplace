@@ -1,0 +1,31 @@
+# Review rules. The ruleset in .github/rulesets/protect-main.json requires an approving
+# review from the code owners of every changed path, so the responsible team must approve.
+# The LAST matching pattern wins, so keep the order below.
+# TODO: replace the placeholder teams (@dev-digest/TODO-...) with real GitHub teams.
+# Teams need write access to the repository for their review to count.
+
+# Default: marketplace admins
+*                                  @dev-digest/TODO-marketplace-admins
+
+# Repository infrastructure: marketplace admins
+/docs/                             @dev-digest/TODO-marketplace-admins
+/scripts/                          @dev-digest/TODO-marketplace-admins
+/site/                             @dev-digest/TODO-marketplace-admins
+/.github/                          @dev-digest/TODO-marketplace-admins
+/.claude-plugin/                   @dev-digest/TODO-marketplace-admins
+/CODEOWNERS                        @dev-digest/TODO-marketplace-admins
+
+# One owner per plugin. scripts/new-plugin.sh appends here; validate.sh requires a line per plugin.
+# BEGIN plugin owners
+/plugins/engineering-paved-path/   @dev-digest/TODO-owner-engineering-paved-path
+/plugins/research-tools/           @dev-digest/TODO-owner-research-tools
+/plugins/architecture-review/      @dev-digest/TODO-owner-architecture-review
+/plugins/sdd-engineering/          @dev-digest/TODO-owner-sdd-engineering
+# END plugin owners
+
+# Code-executing surfaces inside any plugin are reviewed by marketplace admins (security review).
+# This overrides the plugin owner for these paths because the last match wins.
+/plugins/*/hooks/                  @dev-digest/TODO-marketplace-admins
+/plugins/*/scripts/                @dev-digest/TODO-marketplace-admins
+/plugins/*/.mcp.json               @dev-digest/TODO-marketplace-admins
+/plugins/*/settings.json           @dev-digest/TODO-marketplace-admins
