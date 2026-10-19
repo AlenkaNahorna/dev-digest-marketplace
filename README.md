@@ -13,10 +13,10 @@ Claude Code plugins for DevDigest engineering teams. This marketplace is release
 
 | Plugin | Purpose |
 | :- | :- |
-| `engineering-paved-path` | Paved-path engineering conventions and workflows |
-| `research-tools` | Structured research briefs and synthesis |
-| `architecture-review` | Architecture review checklists and ADR helpers |
-| `sdd-engineering` | Spec-driven development workflow |
+| `engineering-paved-path` | Shared engineering skills (React, Next.js, Fastify, testing, architecture, Drizzle, PostgreSQL, Zod, TypeScript, security, Mermaid), one source for all agents |
+| `research-tools` | Read-only researcher agent: finds answers in the repo and external sources and reports with evidence |
+| `architecture-review` | Read-only architecture-reviewer agent: reviews a diff against onion/UI layering and repository architecture rules |
+| `sdd-engineering` | Spec-driven development workflow: spec-creator, implementation-planner, implementer, plan-verifier, implement-plan, workflow-retro |
 
 A browsable catalog (React + Vite, see [site/README.md](site/README.md)) is built from `site/` and published to GitHub Pages.
 

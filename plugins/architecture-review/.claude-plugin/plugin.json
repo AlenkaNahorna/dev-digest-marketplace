@@ -1,10 +1,20 @@
 {
   "name": "architecture-review",
-  "description": "Architecture review checklists and decision-record helpers",
+  "description": "Read-only architecture-reviewer agent: reviews a diff against onion/UI layering and repository architecture rules",
   "version": "0.1.0",
   "author": {
     "name": "DevDigest AI Team"
   },
   "license": "MIT",
-  "keywords": ["architecture", "review", "adr"]
+  "keywords": [
+    "architecture",
+    "review",
+    "agent"
+  ],
+  "dependencies": [
+    {
+      "name": "engineering-paved-path",
+      "version": "^1.0.0"
+    }
+  ]
 }

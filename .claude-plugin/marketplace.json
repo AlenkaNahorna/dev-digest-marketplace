@@ -8,30 +8,44 @@
     {
       "name": "engineering-paved-path",
       "source": "./plugins/engineering-paved-path",
-      "description": "Paved-path engineering conventions and workflows for DevDigest teams",
+      "description": "Shared engineering skills (React, Next.js, Fastify, testing, architecture, Drizzle, PostgreSQL, Zod, TypeScript, security, Mermaid), one source for all agents",
       "category": "engineering",
-      "tags": ["engineering", "conventions"]
+      "tags": [
+        "engineering",
+        "conventions"
+      ]
     },
     {
       "name": "research-tools",
       "source": "./plugins/research-tools",
-      "description": "Research helpers: structured briefs, source gathering and synthesis",
+      "description": "Read-only researcher agent: finds answers in the repo and external sources and reports with evidence",
       "category": "research",
-      "tags": ["research", "analysis"]
+      "tags": [
+        "research",
+        "analysis"
+      ]
     },
     {
       "name": "architecture-review",
       "source": "./plugins/architecture-review",
-      "description": "Architecture review checklists and decision-record helpers",
+      "description": "Read-only architecture-reviewer agent: reviews a diff against onion/UI layering and repository architecture rules",
       "category": "architecture",
-      "tags": ["architecture", "review", "adr"]
+      "tags": [
+        "architecture",
+        "review",
+        "adr"
+      ]
     },
     {
       "name": "sdd-engineering",
       "source": "./plugins/sdd-engineering",
-      "description": "Spec-driven development workflow: spec, plan, tasks, implementation",
+      "description": "Spec-driven development workflow: spec-creator, implementation-planner, implementer, plan-verifier, implement-plan, workflow-retro",
       "category": "engineering",
-      "tags": ["sdd", "specs", "workflow"]
+      "tags": [
+        "sdd",
+        "specs",
+        "workflow"
+      ]
     }
   ]
 }
