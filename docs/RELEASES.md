@@ -36,7 +36,8 @@ Done by the plugin owner, in its own small pull request.
 git switch main && git pull
 git switch -c release/<plugin>
 scripts/release.sh <plugin> <patch|minor|major|X.Y.Z> --push
-# open the PR titled "release: <plugin> vX.Y.Z" (it contains only the version bump)
+# in the same branch, rename "## [Unreleased]" in plugins/<plugin>/CHANGELOG.md to "## [X.Y.Z] - YYYY-MM-DD"
+# open the PR titled "release: <plugin> vX.Y.Z" (the version bump and the changelog entry)
 ```
 
 `release.sh` refuses to run on `main`, bumps `plugin.json`, runs `scripts/validate.sh`, and commits `release: <plugin> vX.Y.Z`. After the code owners approve and the PR merges, CI creates the tag. Releasing one plugin never changes another plugin's version.
@@ -56,8 +57,8 @@ Claude Code has no channel setting of its own. Two channels are available with p
 
 | Channel | What it is | How a user joins |
 | :- | :- | :- |
-| latest | The `main` branch | `/plugin marketplace add <owner>/dev-digest-marketplace` |
-| stable | The `stable` branch, moved by admins to a commit that has proven itself on latest | `/plugin marketplace add <owner>/dev-digest-marketplace#stable` |
+| latest | The `main` branch | `/plugin marketplace add AlenkaNahorna/dev-digest-marketplace` |
+| stable | The `stable` branch, moved by admins to a commit that has proven itself on latest | `/plugin marketplace add AlenkaNahorna/dev-digest-marketplace#stable` |
 
 Promote a commit to stable (repository admins; the branch is protected from deletion and force-push):
 

@@ -3,7 +3,7 @@
 One shared source of engineering skills for TypeScript web projects: React, Next.js, Fastify, testing, architecture, Drizzle, PostgreSQL, Zod, TypeScript, security and Mermaid. Other plugins and agents load them instead of carrying their own copies.
 
 - **Owner:** see `CODEOWNERS`
-- **Install:** `/plugin install engineering-paved-path@dev-digest-marketplace`
+- **Install:** `/plugin marketplace add AlenkaNahorna/dev-digest-marketplace`, then `/plugin install engineering-paved-path@dev-digest-marketplace`
 
 ## What you get
 

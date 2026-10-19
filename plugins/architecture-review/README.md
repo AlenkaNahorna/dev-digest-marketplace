@@ -3,7 +3,7 @@
 Read-only architecture reviewer: checks a diff or a set of paths against the architecture rules your own repository states, and reports findings with evidence.
 
 - **Owner:** see `CODEOWNERS`
-- **Install:** `/plugin install architecture-review@dev-digest-marketplace` (also installs `engineering-paved-path`)
+- **Install:** `/plugin marketplace add AlenkaNahorna/dev-digest-marketplace`, then `/plugin install architecture-review@dev-digest-marketplace` (also installs `engineering-paved-path`)
 
 ## What you get
 

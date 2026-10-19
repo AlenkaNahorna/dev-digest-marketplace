@@ -5,7 +5,7 @@ Claude Code plugins for DevDigest engineering teams. This marketplace is release
 ## Install
 
 ```
-/plugin marketplace add <owner>/dev-digest-marketplace
+/plugin marketplace add AlenkaNahorna/dev-digest-marketplace
 /plugin install <plugin>@dev-digest-marketplace
 ```
 
