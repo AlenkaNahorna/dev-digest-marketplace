@@ -3,7 +3,7 @@
 Read-only research agent: finds answers in a repository or on the web and reports them with evidence.
 
 - **Owner:** see `CODEOWNERS`
-- **Install:** `/plugin install research-tools@dev-digest-marketplace`
+- **Install:** `/plugin marketplace add AlenkaNahorna/dev-digest-marketplace`, then `/plugin install research-tools@dev-digest-marketplace`
 
 ## What you get
 

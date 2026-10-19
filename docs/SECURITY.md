@@ -23,7 +23,7 @@ Apply the rulesets once per repository:
 
 ```bash
 for f in .github/rulesets/*.json; do
-  gh api repos/<owner>/<repo>/rulesets --method POST --input "$f"
+  gh api repos/AlenkaNahorna/dev-digest-marketplace/rulesets --method POST --input "$f"
 done
 ```
 

@@ -17,12 +17,16 @@ Plugins cost context tokens in two ways:
 
 Record the numbers from the first release of each plugin in the table, and update it when a release changes them noticeably.
 
-| Plugin | Version | Always loaded | On invoke |
-| :- | :- | :- | :- |
-| engineering-paved-path | 0.1.0 | ~52 | ~144 |
-| research-tools | 0.1.0 | ~39 | ~115 |
-| architecture-review | 0.1.0 | ~48 | ~133 |
-| sdd-engineering | 0.1.0 | ~42 | ~122 |
+Measured on 2026-10-19 with `node site/scripts/build-index.mjs`. The builder counts skills only; agents are estimated by hand with the same `ceil(chars / 4)` rule (name + description always, body on invoke).
+
+| Plugin | Version | Always loaded (skills) | On invoke (skills) | Agents, always / on invoke (estimate) |
+| :- | :- | :- | :- | :- |
+| engineering-paved-path | 0.1.0 | 957 | 27,248 | none |
+| research-tools | 0.1.0 | 0 | 0 | ~97 / ~1,217 |
+| architecture-review | 0.1.0 | 0 | 0 | ~82 / ~2,166 |
+| sdd-engineering | 0.1.0 | 204 | 2,473 | ~428 / ~10,493 |
+
+`engineering-paved-path` is above the ~500 always-loaded budget (12 skills, 957 tokens). This is an accepted exception: the skills are only useful when all descriptions are visible so the right one triggers. Revisit if the number of skills grows.
 
 ## Proposed budgets
 

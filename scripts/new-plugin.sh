@@ -32,7 +32,7 @@ d="plugins/$name"
 mkdir -p "$d/.claude-plugin" "$d/skills/$name"
 
 jq -n --arg n "$name" --arg d "$desc" \
-  '{name:$n, description:$d, version:"0.1.0", author:{name:"DevDigest AI Team"}, license:"MIT", keywords:[]}' \
+  '{name:$n, description:$d, version:"0.1.0", author:{name:"AlenkaNahorna"}, license:"MIT", keywords:[]}' \
   > "$d/.claude-plugin/plugin.json"
 
 cat > "$d/skills/$name/SKILL.md" <<EOT

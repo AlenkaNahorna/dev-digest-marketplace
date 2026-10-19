@@ -2,7 +2,7 @@
   "name": "dev-digest-marketplace",
   "description": "Claude Code plugins for DevDigest engineering teams, released independently of the DevDigest product",
   "owner": {
-    "name": "DevDigest AI Team"
+    "name": "AlenkaNahorna"
   },
   "plugins": [
     {

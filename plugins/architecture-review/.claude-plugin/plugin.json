@@ -3,7 +3,7 @@
   "description": "Read-only architecture-reviewer agent: reviews a diff against onion/UI layering and repository architecture rules",
   "version": "0.1.0",
   "author": {
-    "name": "DevDigest AI Team"
+    "name": "AlenkaNahorna"
   },
   "license": "MIT",
   "keywords": [

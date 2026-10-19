@@ -3,7 +3,7 @@
 A spec-driven development (SDD) workflow for Claude Code: write a spec, plan from the spec, implement the plan, review it, and verify the result against the spec's acceptance criteria.
 
 - **Owner:** see `CODEOWNERS`
-- **Install:** `/plugin install sdd-engineering@dev-digest-marketplace` (also installs `engineering-paved-path`, `research-tools` and `architecture-review`)
+- **Install:** `/plugin marketplace add AlenkaNahorna/dev-digest-marketplace`, then `/plugin install sdd-engineering@dev-digest-marketplace` (also installs `engineering-paved-path`, `research-tools` and `architecture-review`)
 
 ## What you get
 
