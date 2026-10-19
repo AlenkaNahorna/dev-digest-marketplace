@@ -1,0 +1,37 @@
+{
+  "agent": "sdd-engineering:spec-creator",
+  "cases": [
+    {
+      "id": "writes-ears-spec-without-implementation",
+      "since": "1.0.0",
+      "fixture": "fixtures/export-csv-complete.md",
+      "description": "A fully specified request produces a spec with EARS acceptance criteria and no implementation detail.",
+      "expect": ["Spec ID: SPEC-", "## Acceptance criteria (EARS)", "AC-1"],
+      "forbid": ["function ", "import {", "src/"]
+    },
+    {
+      "id": "unknown-detail-is-marked-not-guessed",
+      "since": "1.0.0",
+      "fixture": "fixtures/export-csv-missing-details.md",
+      "description": "Unanswered questions are written as [NEEDS CLARIFICATION], never guessed.",
+      "expect": ["[NEEDS CLARIFICATION"],
+      "forbid": []
+    },
+    {
+      "id": "every-mandatory-requirement-has-an-ac",
+      "since": "1.1.0",
+      "fixture": "fixtures/export-csv-complete.md",
+      "description": "Each 'must' in the request is covered by at least one AC; the report states requirement coverage.",
+      "expect": ["Requirement → AC coverage", "all covered"],
+      "forbid": ["NOT ready for planning"]
+    },
+    {
+      "id": "requirement-without-ac-blocks-completion",
+      "since": "1.1.0",
+      "fixture": "fixtures/export-csv-requirement-without-criterion.md",
+      "description": "A mandatory requirement that cannot be made verifiable (no threshold given) must not pass: the spec stays draft with an explicit open question and the report says it is not ready for planning.",
+      "expect": ["Status: draft", "[NEEDS CLARIFICATION: acceptance criterion for", "NOT ready for planning"],
+      "forbid": ["Status: approved", "all covered"]
+    }
+  ]
+}
